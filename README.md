@@ -31,7 +31,7 @@ url = "https://vibeshot.club/api/mcp"
 scopes = ["email"]
 ```
 
-然后执行 `codex mcp login vsc`。`scopes` 这一行不要省略：插件只需要 `email` 权限，缺了这一行 Codex 会申请全部权限，授权会在最后一步失败。
+然后执行 `codex mcp login vsc`。`scopes` 这一行建议保留：插件只需要 `email` 权限，不写的话 Codex 会申请全部权限。
 
 ### Claude Code
 
@@ -46,7 +46,7 @@ scopes = ["email"]
 
 第一次调用时，浏览器会打开 vibeshot.club 的授权页。登录后，确认这是你自己正在用的 Agent，点「允许连接」即可。
 
-- Agent 拿到的是**只读**授权：可以读取你有权查看的资源；不能在网站上发帖、评论、点赞、上传或修改资料，也不能下载深度文件。
+- Agent 拿到的是**只读**授权：可以读取你有权查看的资源；不能在网站上发帖、评论、点赞、上传或修改资料，不能下载深度文件，也改不了你的密码。
 - 授权凭证保存在你的电脑上。如果电脑不是你一个人在用，或者怀疑凭证泄露，请立即撤销授权。
 - 想撤销授权，打开 <https://vibeshot.club/integrations/agents> 操作。撤销后，Agent 的下一次调用会立即失效。
 
