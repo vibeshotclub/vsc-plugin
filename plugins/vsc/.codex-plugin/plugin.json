@@ -1,0 +1,31 @@
+{
+  "name": "vsc",
+  "version": "1.0.1",
+  "description": "让 Agent 调阅 Vibe Shot Club 的风格图谱、MJ 风格库、动作运镜库和提示词画廊。",
+  "author": { "name": "Vibe Shot Club", "url": "https://vibeshot.club" },
+  "homepage": "https://vibeshot.club/integrations/agents",
+  "repository": "https://github.com/vibeshotclub/vsc-plugin",
+  "keywords": ["midjourney", "sref", "style", "prompt", "seedance", "camera", "motion"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Vibe Shot Club",
+    "shortDescription": "风格图谱、MJ 风格码、动作运镜与提示词画廊",
+    "longDescription": "调阅 Vibe Shot Club 的四个创作资源库：找风格、混搭风格写提示词；按需推荐 Midjourney sref 风格码；查动作与运镜参考，按 Seedance 2.0 的架构写提示词；按主题或创作者找真实作品的提示词。VSC 会员可调阅全部内容，非会员可使用固定样例。",
+    "developerName": "Vibe Shot Club",
+    "category": "Creativity",
+    "capabilities": ["Read"],
+    "defaultPrompt": [
+      "帮我找 3 个适合赛博朋克海报的风格，给我一条能直接用的提示词",
+      "找一个回旋踢的动作参考，写成 Seedance 提示词"
+    ],
+    "websiteURL": "https://vibeshot.club",
+    "privacyPolicyURL": "https://vibeshot.club/privacy",
+    "termsOfServiceURL": "https://vibeshot.club/terms",
+    "brandColor": "#000000",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png",
+    "composerIcon": "./assets/logo.png",
+    "composerIconDark": "./assets/logo-dark.png"
+  }
+}

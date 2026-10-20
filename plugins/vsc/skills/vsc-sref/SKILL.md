@@ -18,16 +18,16 @@ description: 使用 Vibe Shot Club 的 MJ 风格库（Midjourney SREF code、P �
 每条风格码包括：
 - `code`：完整参数串，必须原样使用。可能是 `--sref 123`、`--sref 123 456`、`-p xxx`，或者以图片 URL 开头的完整配方。
 - `model_version` / `style_version`：MJ 的模型版本和风格版本。
-- `category`：分类。可选值有 photography、cinema、illustration、graphic、fashion、product、architecture、fantasy、abstract、experimental。
-- `tags`：标签。`palette`：主色。
+- `category`、`tags`、`palette`：分类、标签和主色。很多条目这些字段还是空的。
 - `benchmarks`：在 4 个固定场景下验证过的原始提示词，场景分别是 portrait（人物）、environment（空间）、product（产品）、illustration（插画）。
 
 ## 找码
 
-- **有风格方向**：调用 `vsc_search({ library: "sref", keywords: [...], filters: { category } })`。给用户看标题、一句话描述和主色；用户选定后，再调用 `vsc_get_sref({ id })`。
-- **随机一个**：调用 `vsc_random({ library: "sref", count: 1 })`，需要时可以加 `filters: { category }`。
+- **有风格方向**：先调用 `vsc_search({ library: "sref", keywords: [...] })`，给用户看候选；用户选定后，再调用 `vsc_get_sref({ id })`。不少条目还没有文字描述（标题只是参数串），**搜不到时不要编造**，改用下面"随机候选"的办法让用户凭图挑。
+- **随机候选**：调用 `vsc_random({ library: "sref", count: 3 })`，再为每个候选调用 `vsc_media({ library: "sref", id, slot })` 取一张最接近用户需求的基准图（slot 为 portrait、environment、product 或 illustration），让用户看图选择。
+- **随机一个**：调用 `vsc_random({ library: "sref", count: 1 })`。
 - **组合一个**：调用 `vsc_random({ library: "sref", count: 2 })`，或者从用户选定的码里挑两个，再按下文"多码组合"拼接。
-- 用户想看效果图时，调用 `vsc_media({ library: "sref", id, slot: "portrait" | "environment" | "product" | "illustration" })`。
+- **用户给了码**：直接用码里的数字搜索，例如 `vsc_search({ library: "sref", keywords: ["4292182277"] })`。
 
 ## 把码套到用户的主体上
 
@@ -53,4 +53,4 @@ description: 使用 Vibe Shot Club 的 MJ 风格库（Midjourney SREF code、P �
 
 ## 非会员
 
-非会员只能使用 30 组固定样例。被锁定的码会返回 `locked: true`，这时请引导用户开通会员，不要编造代码。
+非会员只能使用一小部分固定样例。被锁定的码会返回 `locked: true`，这时请引导用户开通会员，不要编造代码。

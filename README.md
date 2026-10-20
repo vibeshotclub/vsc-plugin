@@ -17,17 +17,21 @@
 
 ```bash
 codex plugin marketplace add vibeshotclub/vsc-plugin
-codex            # 进入后输入 /plugins，安装 vsc，然后新开一个会话
+codex plugin add vsc@vsc-plugin
+codex mcp login vsc      # 浏览器会打开 vibeshot.club 的授权页
 ```
+
+也可以在 Codex 里输入 `/plugins` 安装。装好后新开一个会话即可使用。
 
 如果只想接 MCP（不带内置 skill），在 `~/.codex/config.toml` 里加上：
 
 ```toml
 [mcp_servers.vsc]
 url = "https://vibeshot.club/api/mcp"
+scopes = ["email"]
 ```
 
-然后执行 `codex mcp login vsc`。
+然后执行 `codex mcp login vsc`。`scopes` 这一行不要省略：插件只需要 `email` 权限，缺了这一行 Codex 会申请全部权限，授权会在最后一步失败。
 
 ### Claude Code
 
@@ -42,14 +46,15 @@ url = "https://vibeshot.club/api/mcp"
 
 第一次调用时，浏览器会打开 vibeshot.club 的授权页。登录后，确认这是你自己正在用的 Agent，点「允许连接」即可。
 
-- Agent 只能**读取**你有权查看的资源，不能发帖、评论、下载深度文件，也不能修改你的账号。
+- Agent 拿到的是**只读**授权：可以读取你有权查看的资源；不能在网站上发帖、评论、点赞、上传或修改资料，也不能下载深度文件。
+- 授权凭证保存在你的电脑上。如果电脑不是你一个人在用，或者怀疑凭证泄露，请立即撤销授权。
 - 想撤销授权，打开 <https://vibeshot.club/integrations/agents> 操作。撤销后，Agent 的下一次调用会立即失效。
 
 ## 用法示例
 
 - 帮我找 3 个适合赛博朋克海报的风格，给我一条能直接用的提示词
 - 我不知道要什么风格，随机组一条提示词，主体是雨夜的天台快递员
-- 用 MJ 出一张胶片感人像，推荐个 sref
+- 用 MJ 随机给我 3 个风格码，配上基准图让我挑
 - 找一个回旋踢的动作参考，写成 Seedance 提示词
 - @umesh_ai 的提示词都怎么写？帮我改成国潮主题
 
@@ -67,8 +72,9 @@ url = "https://vibeshot.club/api/mcp"
 .agents/plugins/marketplace.json     Codex marketplace
 .claude-plugin/marketplace.json      Claude Code marketplace
 plugins/vsc/
-  plugin.json, mcp.json              Codex 插件清单 + MCP（streamable-http，OAuth/DCR）
+  .codex-plugin/plugin.json          Codex 插件清单
   .claude-plugin/plugin.json         Claude Code 插件清单
-  .mcp.json                          Claude Code MCP（http）
+  .mcp.json                          两边共用的 MCP 配置（HTTP + OAuth，只申请 email 权限）
   skills/                            两边共用的 5 个 skill
+  assets/                            图标
 ```
