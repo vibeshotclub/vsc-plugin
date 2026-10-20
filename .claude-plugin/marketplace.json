@@ -1,0 +1,16 @@
+{
+  "name": "vsc-plugin",
+  "description": "Vibe Shot Club 官方插件：让 Agent 调阅风格图谱、MJ 风格库、动作运镜库和提示词画廊。",
+  "owner": {
+    "name": "Vibe Shot Club",
+    "url": "https://vibeshot.club"
+  },
+  "plugins": [
+    {
+      "name": "vsc",
+      "source": "./plugins/vsc",
+      "description": "让 Agent 调阅 Vibe Shot Club 的风格图谱、MJ 风格库、动作运镜库和提示词画廊。",
+      "version": "1.0.0"
+    }
+  ]
+}

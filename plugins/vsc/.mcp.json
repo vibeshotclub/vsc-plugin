@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vsc": {
+      "type": "http",
+      "url": "https://vibeshot.club/api/mcp"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vsc-plugin",
+  "plugins": [
+    {
+      "name": "vsc",
+      "source": { "source": "local", "path": "./plugins/vsc" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

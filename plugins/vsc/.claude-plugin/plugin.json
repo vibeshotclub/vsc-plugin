@@ -1,0 +1,8 @@
+{
+  "name": "vsc",
+  "version": "1.0.0",
+  "description": "让 Agent 调阅 Vibe Shot Club 的风格图谱、MJ 风格库、动作运镜库和提示词画廊。",
+  "author": { "name": "Vibe Shot Club", "url": "https://vibeshot.club" },
+  "homepage": "https://vibeshot.club/integrations/agents",
+  "keywords": ["midjourney", "sref", "style", "prompt", "seedance", "camera", "motion"]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vsc",
+  "version": "1.0.0",
+  "description": "Vibe Shot Club resources for AI image and video creation: style atlas, Midjourney sref codes, motion references and a prompt gallery. VSC membership unlocks the full catalogs."
+}
