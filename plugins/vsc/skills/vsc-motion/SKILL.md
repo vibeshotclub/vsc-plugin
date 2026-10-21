@@ -7,6 +7,8 @@ description: 使用 Vibe Shot Club 动作运镜库（角色动作、打斗、舞
 
 > Seedance 部分依据火山引擎官方的《Seedance 2.0 提示词指南》，以及 VSC 在 Seedance 2.5 上的实测经验整理。
 
+> **先确认插件已连接。** 当前会话里没有 `vsc_` 开头的工具（工具名可能带前缀，例如 `mcp__vsc__vsc_search`；客户端按需加载工具时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
+
 ## 这个库是做什么的
 
 这个库只用来参考，你只做三件事：

@@ -50,6 +50,12 @@ scopes = ["email"]
 - 授权凭证保存在你的电脑上。如果电脑不是你一个人在用，或者怀疑凭证泄露，请立即撤销授权。
 - 想撤销授权，打开 <https://vibeshot.club/integrations/agents> 操作。撤销后，Agent 的下一次调用会立即失效。
 
+### 装好后没有提示登录？
+
+问 Agent 一个 VSC 的问题，它如果回答"VSC 插件还没有连接"，说明还没授权：Codex 运行 `codex mcp login vsc`，Claude Code 在 `/mcp` 里选中 `plugin:vsc:vsc` 登录。
+
+不要用 Codex 的 plugin-creator 把本仓库导入成 ChatGPT 账号的私有插件。那样只会装上 skill，Codex 不会提示登录，资源库工具也不会出现。已经这样装了的话，先删掉，再按上面的「安装」重新装。
+
 ## 用法示例
 
 - 帮我找 3 个适合赛博朋克海报的风格，给我一条能直接用的提示词

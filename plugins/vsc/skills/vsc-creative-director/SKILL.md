@@ -7,6 +7,24 @@ description: Vibe Shot Club 资源总入口。当用户做 AI 图片或视频创
 
 `vsc_*` 工具连接的是 Vibe Shot Club（VSC）的资源库。本 skill 负责判断该用哪个库、按什么顺序调用。每个库的具体用法写在对应的 skill 里。
 
+## 0. 先确认插件已连接
+
+`vsc_*` 工具要在用户登录 VSC 账号、授权之后才会出现。每次对话开始前先确认：
+
+1. 当前会话里有没有 `vsc_` 开头的工具。工具名可能带客户端前缀，例如 `mcp__vsc__vsc_search`、`mcp__plugin_vsc_vsc__vsc_search`。客户端按需加载工具时（例如有工具搜索），先按 `vsc` 搜一次再下结论。
+2. 有这些工具：按第 2 节继续。
+3. 找不到这些工具，或者调用返回未登录、401、授权失效、授权已撤销：**立即停下**，不要接着完成任务，把下面这段话告诉用户：
+
+> VSC 插件还没有连接到你的 Vibe Shot Club 账号，我现在查不到 VSC 的资源库。请先登录：
+> - Codex：在终端运行 `codex mcp login vsc`，在打开的 vibeshot.club 授权页登录并点「允许连接」，然后新开一个会话。
+> - Claude Code：输入 `/mcp`，选中 `plugin:vsc:vsc`，按提示完成登录。
+> - 如果插件是用 plugin-creator 导入成 ChatGPT 账号私有插件的，或者在上面找不到 vsc：请先删除它，再按 https://github.com/vibeshotclub/vsc-plugin 的说明重新安装。
+>
+> 授权后 Agent 只能读取你有权查看的内容，随时可以在 https://vibeshot.club/integrations/agents 撤销。
+
+4. 没有连接时，**不要**用下面这些方式代替插件：打开或抓取 vibeshot.club 的网页、用浏览器读用户已登录的页面、直接调用网站接口、网页搜索、凭记忆写"VSC 的风格"或"VSC 的提示词"。这样得到的结果不是插件给的，会让用户以为插件在正常工作，也绕开了会员和额度规则。
+5. 用户看完提示后明确说"先不用插件，直接帮我写"时，可以给出通用写法，但开头要写明"以下内容不是来自 VSC 资源库"，也不要给 VSC 的链接或条目名。
+
 ## 1. 选库（严格按此表）
 
 | 用户的需求 | library | 详细用法 |
