@@ -1,13 +1,19 @@
 ---
 name: vsc-motion
 description: 使用 Vibe Shot Club 动作运镜库（角色动作、打斗、舞蹈、镜头演示等参考视频，附白模或深度素材与编辑整理的用法）。用户想了解或复刻某个动作、运镜、卡点、变装、转场，或问"这个动作的提示词怎么写"时使用。只作参考：讲清动作，给播放链接，需要时按 Seedance 2.0 提示词架构写动作提示词；不下载文件，也不调用视频模型。Use for motion/camera references and Seedance-style motion prompts.
+display_name: "VSC 动作运镜库"
+display_name_en: "VSC Motion References"
+description_zh: "查找动作与运镜参考，辅助编写视频提示词。"
+description_en: "Find motion and camera references for video prompts."
+version: "1.0.4"
+author: "Vibe Shot Club"
 ---
 
 # 动作运镜库（Motion）
 
 > Seedance 部分依据火山引擎官方的《Seedance 2.0 提示词指南》，以及 VSC 在 Seedance 2.5 上的实测经验整理。
 
-> **先确认插件已连接。** 当前会话里没有 `vsc_` 开头的工具（工具名可能带前缀，例如 `mcp__vsc__vsc_search`；客户端按需加载工具时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
+> **先确认插件已连接。** 当前会话里找不到 VSC 工具（按服务端名称 `vsc_search` 等识别，允许 `mcp__vsc__`、`mcp_vsc_` 等客户端前缀；使用实际暴露的完整名称，按需加载时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录；Hermes 在终端运行 `hermes mcp login vsc`；WorkBuddy 在 MCP 设置中启用或重连 `vsc`，通过本地 OAuth 桥接打开授权页。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
 
 ## 这个库是做什么的
 

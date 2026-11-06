@@ -1,11 +1,17 @@
 ---
 name: vsc-prompt-gallery
 description: 使用 Vibe Shot Club 提示词画廊（收录优秀创作者的真实作品与完整提示词，以视频为主）。用户按主题找提示词、想看某位创作者怎么写、要参考真实案例改写提示词时使用。Use to find real prompts by theme or by creator name.
+display_name: "VSC 提示词画廊"
+display_name_en: "VSC Prompt Gallery"
+description_zh: "查找创作者作品的真实提示词，分析并改写主题。"
+description_en: "Find real creator prompts, analyze them and adapt the theme."
+version: "1.0.4"
+author: "Vibe Shot Club"
 ---
 
 # 提示词画廊（Gallery）
 
-> **先确认插件已连接。** 当前会话里没有 `vsc_` 开头的工具（工具名可能带前缀，例如 `mcp__vsc__vsc_search`；客户端按需加载工具时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
+> **先确认插件已连接。** 当前会话里找不到 VSC 工具（按服务端名称 `vsc_search` 等识别，允许 `mcp__vsc__`、`mcp_vsc_` 等客户端前缀；使用实际暴露的完整名称，按需加载时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录；Hermes 在终端运行 `hermes mcp login vsc`；WorkBuddy 在 MCP 设置中启用或重连 `vsc`，通过本地 OAuth 桥接打开授权页。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
 
 ## 库里有什么
 

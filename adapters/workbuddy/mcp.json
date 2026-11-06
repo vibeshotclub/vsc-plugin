@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "vsc": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.16.1",
+        "https://vibeshot.club/api/mcp",
+        "--transport",
+        "http-only",
+        "--static-oauth-client-metadata",
+        "{\"client_name\":\"VSC WorkBuddy\",\"scope\":\"email\"}",
+        "--auth-timeout",
+        "300"
+      ]
+    }
+  }
+}
