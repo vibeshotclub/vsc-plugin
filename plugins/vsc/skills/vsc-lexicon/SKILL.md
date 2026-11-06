@@ -1,11 +1,17 @@
 ---
 name: vsc-lexicon
 description: 使用 Vibe Shot Club 风格图谱（1600 多个视觉风格概念，覆盖艺术史、插画、摄影、电影、3D、平面、建筑、材质等 13 个领域）。用于找风格、介绍风格、区分相近风格、随机一个风格、随机组提示词、多风格混搭。图片和视频的风格需求默认都用这个库。Use for style concepts, style prompt templates, random styles and style mixing.
+display_name: "VSC 风格图谱"
+display_name_en: "VSC Visual Styles"
+description_zh: "查找、比较和混搭视觉风格，生成适合主体的提示词。"
+description_en: "Find, compare and mix visual styles into prompts."
+version: "1.0.4"
+author: "Vibe Shot Club"
 ---
 
 # 风格图谱（Lexicon）
 
-> **先确认插件已连接。** 当前会话里没有 `vsc_` 开头的工具（工具名可能带前缀，例如 `mcp__vsc__vsc_search`；客户端按需加载工具时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
+> **先确认插件已连接。** 当前会话里找不到 VSC 工具（按服务端名称 `vsc_search` 等识别，允许 `mcp__vsc__`、`mcp_vsc_` 等客户端前缀；使用实际暴露的完整名称，按需加载时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录；Hermes 在终端运行 `hermes mcp login vsc`；WorkBuddy 在 MCP 设置中启用或重连 `vsc`，通过本地 OAuth 桥接打开授权页。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
 
 ## 库的结构
 

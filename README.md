@@ -1,6 +1,6 @@
 # VSC Plugin
 
-装上这个插件后，Codex 和 Claude Code 可以直接调阅 [Vibe Shot Club](https://vibeshot.club) 的四个创作资源库：
+装上这个插件后，Codex、Claude Code、Hermes 和 WorkBuddy 可以通过对应安装方式调阅 [Vibe Shot Club](https://vibeshot.club) 的四个创作资源库：
 
 | 资源库 | Agent 能做什么 |
 |---|---|
@@ -42,6 +42,16 @@ scopes = ["email"]
 
 如果只想接 MCP：`claude mcp add --transport http vsc https://vibeshot.club/api/mcp`，接好后在 `/mcp` 里完成登录。
 
+### Hermes
+
+原生 MCP OAuth + Skills：按照 [Hermes 安装指南](docs/hermes.md) 安装 5 个 Skills，将 [配置片段](adapters/hermes/config.yaml) 合并到当前 profile 的 `config.yaml`，然后执行 `hermes mcp login vsc`。
+
+### WorkBuddy
+
+本地 MCP OAuth 桥接 + Skills：按照 [WorkBuddy 安装指南](docs/workbuddy.md) 合并 [MCP 配置](adapters/workbuddy/mcp.json)，在客户端中连接并完成浏览器授权，然后导入 5 个 Skill 目录或 ZIP。需要 Node.js 22 LTS 或更新的 LTS 版本。
+
+这两条适配路径已提供配置与技能包构建方式，客户端内的完整登录和资源调用仍待实测；不代表已上架 Hermes 或 WorkBuddy 官方市场。
+
 ## 首次授权
 
 第一次调用时，浏览器会打开 vibeshot.club 的授权页。登录后，确认这是你自己正在用的 Agent，点「允许连接」即可。
@@ -52,7 +62,7 @@ scopes = ["email"]
 
 ### 装好后没有提示登录？
 
-问 Agent 一个 VSC 的问题，它如果回答"VSC 插件还没有连接"，说明还没授权：Codex 运行 `codex mcp login vsc`，Claude Code 在 `/mcp` 里选中 `plugin:vsc:vsc` 登录。
+问 Agent 一个 VSC 的问题，它如果回答"VSC 插件还没有连接"，说明还没授权：Codex 运行 `codex mcp login vsc`，Claude Code 在 `/mcp` 里选中 `plugin:vsc:vsc` 登录；Hermes 执行 `hermes mcp login vsc`；WorkBuddy 在 MCP 设置里重连 `vsc`，按桥接打开的页面授权。
 
 不要用 Codex 的 plugin-creator 把本仓库导入成 ChatGPT 账号的私有插件。那样只会装上 skill，Codex 不会提示登录，资源库工具也不会出现。已经这样装了的话，先删掉，再按上面的「安装」重新装。
 
@@ -81,6 +91,10 @@ plugins/vsc/
   .codex-plugin/plugin.json          Codex 插件清单
   .claude-plugin/plugin.json         Claude Code 插件清单
   .mcp.json                          两边共用的 MCP 配置（HTTP + OAuth，只申请 email 权限）
-  skills/                            两边共用的 5 个 skill
+  skills/                            四个客户端共用的 5 个 skill
   assets/                            图标
+adapters/hermes/config.yaml          Hermes 原生 MCP 配置
+adapters/workbuddy/mcp.json          WorkBuddy 本地 OAuth 桥接配置
+scripts/build-clients.py             构建独立 Skill ZIP 与配置下载文件
+docs/                               分客户端安装、授权与排障
 ```

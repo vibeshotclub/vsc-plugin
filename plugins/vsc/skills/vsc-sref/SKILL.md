@@ -1,11 +1,17 @@
 ---
 name: vsc-sref
 description: 使用 Vibe Shot Club 的 MJ 风格库（Midjourney SREF code、P 值、moodboard）。只在用户明确提到 Midjourney、MJ、sref 或风格码，或者要随机一个、组合一个风格码时使用；用户没提 MJ 时不要使用。Use only when the user explicitly asks for Midjourney --sref / --p style codes.
+display_name: "VSC MJ 风格库"
+display_name_en: "VSC Midjourney Styles"
+description_zh: "查找 Midjourney sref 风格码并按主体推荐组合。"
+description_en: "Find Midjourney sref codes and recommend combinations."
+version: "1.0.4"
+author: "Vibe Shot Club"
 ---
 
 # MJ 风格库（SREF）
 
-> **先确认插件已连接。** 当前会话里没有 `vsc_` 开头的工具（工具名可能带前缀，例如 `mcp__vsc__vsc_search`；客户端按需加载工具时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
+> **先确认插件已连接。** 当前会话里找不到 VSC 工具（按服务端名称 `vsc_search` 等识别，允许 `mcp__vsc__`、`mcp_vsc_` 等客户端前缀；使用实际暴露的完整名称，按需加载时先按 `vsc` 搜一次），或者调用返回未登录、401、授权失效时，立即停下，告诉用户 VSC 插件还没连接，并给出登录方法：Codex 运行 `codex mcp login vsc`；Claude Code 输入 `/mcp` 选中 `plugin:vsc:vsc` 登录；Hermes 在终端运行 `hermes mcp login vsc`；WorkBuddy 在 MCP 设置中启用或重连 `vsc`，通过本地 OAuth 桥接打开授权页。完整话术见 `vsc-creative-director` 第 0 节。**不要**改用 vibeshot.club 网页、浏览器、网站接口、网页搜索或记忆来代替库里的内容。
 
 ## 何时使用
 

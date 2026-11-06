@@ -1,0 +1,6 @@
+# Merge vsc into the existing mcp_servers map; preserve all other settings.
+# For a named Hermes profile, edit that profile's config.yaml.
+mcp_servers:
+  vsc:
+    url: https://vibeshot.club/api/mcp
+    auth: oauth
